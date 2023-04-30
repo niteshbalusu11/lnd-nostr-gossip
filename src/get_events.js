@@ -1,14 +1,5 @@
 import { auto } from "async";
-import {
-  validateEvent,
-  verifySignature,
-  signEvent,
-  getEventHash,
-  getPublicKey,
-  generatePrivateKey,
-  relayInit,
-  SimplePool,
-} from "nostr-tools";
+import { relayInit } from "nostr-tools";
 
 const getEvents = async ({}) => {
   const pk = process.env.PUBLIC_KEY;

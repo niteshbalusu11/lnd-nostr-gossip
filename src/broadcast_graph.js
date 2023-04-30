@@ -4,10 +4,7 @@ import {
   verifySignature,
   signEvent,
   getEventHash,
-  getPublicKey,
-  generatePrivateKey,
   relayInit,
-  SimplePool,
 } from "nostr-tools";
 
 const broadcastGraph = async ({ graph, kind }) => {

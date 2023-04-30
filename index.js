@@ -42,7 +42,7 @@ const start = async () => {
     getGraph: [
       "getLnd",
       "getInfo",
-      async ({ getLnd, getInfo }) => {
+      async ({ getLnd }) => {
         const graph = await getNetworkGraph({ lnd: getLnd.lnd });
 
         return { graph };
@@ -51,7 +51,7 @@ const start = async () => {
 
     checkEvents: [
       "getLnd",
-      async ({ getLnd }) => {
+      async ({}) => {
         getEvents({});
 
         return;
@@ -61,9 +61,8 @@ const start = async () => {
     broadcastGraph: [
       "getGraph",
       "getLnd",
-      async ({ getGraph, getLnd }) => {
+      async ({ getGraph }) => {
         const { graph } = getGraph;
-        const { lnd } = getLnd;
 
         broadcastGraph({ graph, kind: 80083 });
         return;
