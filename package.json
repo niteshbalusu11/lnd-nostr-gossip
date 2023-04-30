@@ -15,6 +15,8 @@
     "dotenv": "^16.0.3",
     "ln-service": "^56.2.0",
     "nostr-tools": "^1.10.1",
-    "websocket-polyfill": "^0.0.3"
+    "websocket-polyfill": "^0.0.3",
+    "@grpc/grpc-js": "^1.6.7",
+    "@grpc/proto-loader": "^0.6.13"
   }
 }

@@ -6,6 +6,7 @@ import {
   getEventHash,
   relayInit,
 } from "nostr-tools";
+import addGossipCln from "../add_gossip_cln.js";
 
 const broadcastGraph = async ({ graph, kind }) => {
   return await auto({
@@ -54,6 +55,12 @@ const broadcastGraph = async ({ graph, kind }) => {
         pub.on("failed", (reason) => {
           console.log(`failed to publish to ${relay.url}: ${reason}`);
         });
+
+        try {
+          await addGossipCln({ gossip: JSON.stringify(event.content) });
+        } catch (err) {
+          console.log("error adding gossip to cln:", err);
+        }
       },
     ],
   });

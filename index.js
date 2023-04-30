@@ -12,6 +12,7 @@ import {
 import { readFileSync } from "fs";
 import broadcastGraph from "./src/broadcast_graph.js";
 import getEvents from "./src/get_events.js";
+import addGossipCln from "./add_gossip_cln.js";
 
 const start = async () => {
   return await auto({
