@@ -27,7 +27,7 @@ const addGossipCln = async ({ gossip }) => {
 
   const client = new CLNService(process.env.CLN_SOCKET, credentials);
 
-  client.AddGossip({ message: Buffer.from(gossip, "utf-8") }, (error, info) => {
+  client.AddGossip({ message: gossip }, (error, info) => {
     if (error) {
       console.log("error adding gossip to cln:", error.message);
     }
