@@ -29,7 +29,7 @@ const addGossipCln = async ({ gossip }) => {
 
   client.AddGossip({ message: gossip }, (error, info) => {
     if (error) {
-      console.log("error adding gossip to cln:", error.message);
+      // console.log("error adding gossip to cln:", error.message);
     }
     // info.id = Buffer.from(info.id, "base64").toString("hex");
     // info.color = Buffer.from(info.color, "base64").toString("hex");

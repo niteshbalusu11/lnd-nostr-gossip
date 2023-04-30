@@ -47,6 +47,7 @@ const start = async () => {
       async ({ getLnd }) => {
         const graph = await getNetworkGraph({ lnd: getLnd.lnd });
 
+        console.log(graph);
         return { graph };
       },
     ],
@@ -84,10 +85,12 @@ const start = async () => {
         });
 
         sub.on("channel_closed", (data) => {
+          console.log(data);
           broadcastGraph({ graph: data, kind: 80082 });
         });
 
         sub.on("node_updated", (data) => {
+          console.log(data);
           broadcastGraph({ graph: data, kind: 80082 });
         });
 
