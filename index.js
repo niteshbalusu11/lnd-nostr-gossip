@@ -79,17 +79,14 @@ const start = async () => {
         const sub = subscribeToGraph({ lnd });
 
         sub.on("channel_updated", (data) => {
-          console.log("channel_updated", data);
           broadcastGraph({ graph: data, kind: 80082 });
         });
 
         sub.on("channel_closed", (data) => {
-          console.log("channel_closed", data);
           broadcastGraph({ graph: data, kind: 80082 });
         });
 
         sub.on("node_updated", (data) => {
-          console.log("node_updated", data);
           broadcastGraph({ graph: data, kind: 80082 });
         });
 
